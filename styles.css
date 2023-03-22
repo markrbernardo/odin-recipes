@@ -1,12 +1,105 @@
-body{
+*{
     color: #000000;
-    background-color: #A2BF39;
+    font-size: 10pt;
     font-family: "Roboto", "Verdana", sans-serif;
-    text-align: center;
+    box-sizing: border-block;
+    margin: 0px;
+    padding: 0px;
 }
 
-img{
-    height: 50%;
-    width: 50%;
+body {
+    background-color: #309953;
+    padding: 0px 12px 0px 12px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
 }
 
+.main{
+    padding: 12px 0px 12px 0px;
+}
+
+.header {
+    background-color: #000000;
+    border:#000000 1px solid;
+    height: 50px;
+    width: 100vw;
+}
+
+h1{
+    font-size: 42pt;
+    padding-bottom: 10px;
+}
+
+
+div.recipe-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+
+.recipe-card {
+    background-color: #ebebeb;
+    border: #000000 2px solid;
+    border-radius: 25px;
+    box-shadow: -10px 8px 0px 0px rgb(34, 34, 34);
+    width: 250px;
+}
+
+.image {
+    background-color: #b6b6b6;
+    border-bottom: #000000 2px solid;
+    border-radius: 25px 25px 0px 0px;
+    width: 250px;
+    height: 190px;
+}
+
+#bcdip {
+    background-image: url("https://www.allrecipes.com/thmb/4ozdakmOSEXheoY9HNGE7-gQyuc=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/68461-buffalo-chicken-dip-recipe-id-required-lol-608515-4x3-1-e1a9f85cdeaa4c4b830668d8cf4fa67d.jpg");
+    background-size: cover;
+}
+
+#guac{
+    background-image: url("https://www.allrecipes.com/thmb/cKFHrBFFmZ2ItMQ32NItV4JsPHU=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/14231_guacamole_Rita-1x1-1-6797bd34d19b4f88a210f2086ca1156f.jpg");
+    background-size: cover;
+}
+
+#chili{
+    background-image: url("https://www.allrecipes.com/thmb/8GA601ZF7A1hvoOBuV0k9WkUxAM=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/16248_easy-homemade-chili_Rita-1x1-1-f584fa2d46e94fb99e152697a005136e.jpg");
+    background-size: cover;
+}
+
+#sltdip{
+    background-image: url("https://www.allrecipes.com/thmb/glaiaTmAIAgiYg4_ywEi1F02p_4=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/246196-3be08f1e81124898a785c8a66588ea93.jpg");
+    background-size: cover;
+}
+
+h2 {
+    font-size: 16pt;
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.details {
+    padding: 12px 12px 24px 12px; 
+}
+
+.footer {
+    background-color: #000000;
+    height: 50px;
+    width: 100vw;
+    display: flex;
+    justify-content: flex-end;
+}
+
+p.footer {
+    color: #FFFFFF;
+}
