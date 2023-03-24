@@ -35,3 +35,11 @@ This project will also get more acquainted with using GitHub from the Command Li
 - When link pressed, .recipe-page-image and .nametag won't show the correct contents when clicked. 
     - I have the first portion of the javascript code run so the cards have content. Last content to run is .sltdip, hence why it is the thing that we always see when we click on the viewOverlay().
     -Going to try to separate __recipe functions: getTitle and Text for cards and onclick functions
+
+### 03.24.2023
+- Ran code this morning and looks like the experiment to separate the functions worked. I just needed to fix a minor error and site works how I want it.
+- Code produces a lag due to the clearItemStep(). Can be something to fix in the future. Otherwise, this project seems to be satisfactory for the time being.
+
+#### Future Fixes
+- Get rid of lag from clearItemStep() when clicking out of Overlay.
+- Fix any excess code. (Ongoing)
