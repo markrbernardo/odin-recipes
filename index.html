@@ -95,7 +95,6 @@
             getbcdRecipe();
             getChiliRecipe();
             getsltdRecipe();
-            clearNameTag();
 
             //Click Actions
             document.getElementById("no1").addEventListener("click", viewOverlay);
@@ -217,7 +216,6 @@
                 document.getElementsByClassName("recipe-page-image")[0].id = "chili";
                 title.textContent = chiliCardTitle.textContent = "Chili";
                 ddetails.textContent = chiliDescription.textContent = "This homemade chili is loaded with beef, beans, and crowd-pleasing flavor. (Taken from www.allrecipes.com)" ;
-                count++;
                 };
 
                 document.getElementById("no3").addEventListener("click", () => {
