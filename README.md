@@ -26,3 +26,12 @@ This project will also get more acquainted with using GitHub from the Command Li
 -Trying to attach title and description from recipe-page to recipe-cards
     -Problems with substituting items in overlay (Look into loops?)
 - Made an overlay effect with the recipe-page contents
+
+### 03.23.2022
+- Unlinked individual pages for html (Overlay is doing the same effect)
+- Able to load description on individual cards
+
+#### Problems
+- When link pressed, .recipe-page-image and .nametag won't show the correct contents when clicked. 
+    - I have the first portion of the javascript code run so the cards have content. Last content to run is .sltdip, hence why it is the thing that we always see when we click on the viewOverlay().
+    -Going to try to separate __recipe functions: getTitle and Text for cards and onclick functions
