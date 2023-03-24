@@ -11,13 +11,13 @@
         </div>
 
         <div class="main">
-            <h1>Odin Recipes</h1>
+            <h1>Recipes</h1>
             <div class="recipe-container">
                 <div class="recipe-card" id="no1">
                         <div class="image" id="guac"></div>
                         <div class="details">
                             <h2 class="guac-card-title"></h2>
-                            <p class="guac-description">eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci a scelerisque purus semper eget duis at tellus at urna condimentum mattis pellentesque id nibh</p>
+                            <p class="guac-description"></p>
                         </div>
                 </div>
                 <div class="recipe-card" id="no2">
@@ -28,22 +28,18 @@
                         </div>
                 </div>
                 <div class="recipe-card" id="no3">
-                    <a href="recipes/chili.html">
                         <div class="image" id="chili"></div>
                         <div class="details">
-                            <h2>Chili</h2>
-                            <p class="chili-description">eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci a scelerisque purus semper eget duis at tellus at urna condimentum mattis pellentesque id nibh</p>
-                    </div>
-                    </a>
+                            <h2 class="chili-card-title"></h2>
+                            <p class="chili-description"></p>
+                        </div>
                 </div>
                 <div class="recipe-card" id="no4">
-                    <a href="recipes/seven-layer-taco-dip.html">
                         <div class="image" id="sltdip"></div>
                         <div class="details">
-                            <h2>Seven-Layer Taco Dip</h2>
-                            <p class="sltdip-description">eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci a scelerisque purus semper eget duis at tellus at urna condimentum mattis pellentesque id nibh</p>
+                            <h2 class="sltdip-card-title"></h2>
+                            <p class="sltdip-description"></p>
                         </div>
-                    </a>
                 </div>
             </div>    
         </div>
@@ -86,18 +82,26 @@
         <script>
             const title = document.querySelector(".title");
             const bcdipCardTitle = document.querySelector(".bcdip-card-title");
-            const guacCardTitle = document.querySelector(".guac-card-title"); 
+            const guacCardTitle = document.querySelector(".guac-card-title");
+            const chiliCardTitle = document.querySelector(".chili-card-title");
+            const sltdCardTitle = document.querySelector(".sltdip-card-title"); 
             const ddetails = document.querySelector(".ddetails");
             const guacDescription = document.querySelector(".guac-description");
             const bcdipDescription = document.querySelector(".bcdip-description");
-            let count = 0;
+            const chiliDescription = document.querySelector(".chili-description");
+            const sltdDescription = document.querySelector(".sltdip-description");
 
-            guacRecipe();
-            bcdRecipe();
+            getGuacRecipe();
+            getbcdRecipe();
+            getChiliRecipe();
+            getsltdRecipe();
+            clearNameTag();
 
-
+            //Click Actions
             document.getElementById("no1").addEventListener("click", viewOverlay);
             document.getElementById("no2").addEventListener("click", viewOverlay);
+            document.getElementById("no3").addEventListener("click", viewOverlay);
+            document.getElementById("no4").addEventListener("click", viewOverlay);
             
             
             document.getElementsByClassName("overlay")[0].addEventListener("click", ()=>{hideOverlay(); clearItemStep();});
@@ -105,11 +109,11 @@
 
             function viewOverlay() {
                 document.getElementsByClassName("overlay")[0].style.visibility = "visible";
-            }
+            };
 
             function hideOverlay() {
                 document.getElementsByClassName("overlay")[0].style.visibility = "hidden";
-            }
+            };
 
             function clearItemStep(){
                 var lis = document.querySelectorAll('.item li');
@@ -120,23 +124,27 @@
                 for(var i=0; li=lis[i]; i++) {
                     li.parentNode.removeChild(li);
                 }
-            }
+            };
 
+            function clearNameTag() {
+                var lis =document.querySelectorAll ('h2 .title');
+                for(var i=0; li=lis[i]; i++) {
+                    h2.parentNode.removeChild(h2);
+                }
+                ddetails.textContent.replace('');
+            };
 
             //Script for: Substitution Text for textContent and arrays
 
-            function guacRecipe() {
-                count = 0;
-                do {
+            function getGuacRecipe() {
                 document.getElementsByClassName("recipe-page-image")[0].id = "guac";
                 title.textContent = guacCardTitle.textContent = "Guacamole";
                 ddetails.textContent = guacDescription.textContent = "Restaurant-worthy guacamole is just a few ingredients away. You'll be surprised how easy it is to make this top-rated guacamole recipe. You'll come back to it again and again! (Taken from www.allrecipes.com)" ;
-                count++;
-                } while (count < 1);
+            };
 
-                document.getElementById("no1").addEventListener("click", () => {
-                    title.textContent;
-                    ddetails.textContent;
+
+            document.getElementById("no1").addEventListener("click", () => {
+                    getGuacRecipe();
                     var ingredientsText = [
                         "Avocado",
                         "Lime",
@@ -165,19 +173,16 @@
                         document.getElementsByClassName("step")[0].appendChild(li)
                         });
                     });
-            }
 
 
-            function bcdRecipe() {
-                count = 1;
-                do {
+            function getbcdRecipe() {
                 document.getElementsByClassName("recipe-page-image")[0].id = "bcdip";
-                title.textContent = bcdipCardTitle.textContent = "Buffalo Chicken Dip";
-                ddetails.textContent = bcdipDescription.textContent = "Few appetizers bring a crowd together quite like warm, ooey-gooey, utterly irresistible Buffalo chicken dip. The Allrecipes community can't get enough of this easy Buffalo chicken dip with canned chicken — it has more than 4,000 rave reviews from happy home cooks. Find out what all the fuss is about with this top-rated recipe. (Taken from www.allrecipes.com)" ;
-                count++;
-                } while (count < 2);
+                bcdipCardTitle.textContent = title.textContent = "Buffalo Chicken Dip";
+                bcdipDescription.textContent = ddetails.textContent = "Few appetizers bring a crowd together quite like warm, ooey-gooey, utterly irresistible Buffalo chicken dip. The Allrecipes community can't get enough of this easy Buffalo chicken dip with canned chicken — it has more than 4,000 rave reviews from happy home cooks. Find out what all the fuss is about with this top-rated recipe. (Taken from www.allrecipes.com)" ;
+                };
 
-                document.getElementById("no2").addEventListener("click", () => {
+            document.getElementById("no2").addEventListener("click", () => {
+                getbcdRecipe();
                 var ingredientsText = [
                     "Canned Chicken (Chunks)",
                     "Hot Pepper Sauce",
@@ -206,9 +211,88 @@
                     document.getElementsByClassName("step")[0].appendChild(li)
                     });
                 });
-            }
 
 
+            function getChiliRecipe() {
+                document.getElementsByClassName("recipe-page-image")[0].id = "chili";
+                title.textContent = chiliCardTitle.textContent = "Chili";
+                ddetails.textContent = chiliDescription.textContent = "This homemade chili is loaded with beef, beans, and crowd-pleasing flavor. (Taken from www.allrecipes.com)" ;
+                count++;
+                };
+
+                document.getElementById("no3").addEventListener("click", () => {
+                    getChiliRecipe();
+                    var ingredientsText = [
+                        "Ground Beef",
+                        "Onion",
+                        "Tomato Sauce",
+                        "Kidney Beans",
+                        "Stewed Tomatoes",
+                        "Water",
+                        "Chili Powder",
+                        "Garlic Powder",
+                        "Salt & Pepper"
+                    ];
+                    
+                    ingredientsText.map(function (el) {
+                            var li = document.createElement("li");
+                            li.appendChild(document.createTextNode(el));
+                            document.getElementsByClassName("item")[0].appendChild(li)
+                    });
+
+                    var stepText = [
+                        "Place ground beef and onion in a large saucepan over medium heat; cook and stir until meat is browned and onion is tender, about 5 to 7 minutes.",
+                        "Stir in tomato sauce, kidney beans, stewed tomatoes with juice, and water. Season with chili powder, garlic powder, salt, and black pepper. Bring to a boil, reduce heat to low, cover and let simmer for 15 minutes."
+                    ];
+                    
+                    stepText.map(function (el) {
+                        var li = document.createElement("li");
+                        li.appendChild(document.createTextNode(el));
+                        document.getElementsByClassName("step")[0].appendChild(li)
+                        });
+                    });
+
+
+            function getsltdRecipe() {
+                document.getElementsByClassName("recipe-page-image")[0].id = "sltdip";
+                title.textContent = sltdCardTitle.textContent = "Seven-Layer Taco Dip";
+                ddetails.textContent = sltdDescription.textContent = "This taco dip is always a big hit at parties and family get-togethers. People gather around the platter until it's gone! (Taken from www.allrecipes.com)";
+                };
+
+            document.getElementById("no4").addEventListener("click", () => {
+                    getsltdRecipe();
+                    var ingredientsText = [
+                        "Refried Beans",
+                        "Taco Seasoning Mix",
+                        "Sour Cream",
+                        "Salsa",
+                        "Tomato",
+                        "Green Bell Pepper",
+                        "Green Onion",
+                        "Iceberg Lettuce",
+                        "Cheddar Cheese",
+                        "Black Olives"
+                    ];
+                    
+                    ingredientsText.map(function (el) {
+                            var li = document.createElement("li");
+                            li.appendChild(document.createTextNode(el));
+                            document.getElementsByClassName("item")[0].appendChild(li)
+                    });
+
+                    var stepText = [
+                        "Blend refried beans and taco seasoning in a medium bowl; spread mixture onto a large serving platter.",
+                        "Mix sour cream and cream cheese in a medium bowl; spread over refried beans.",
+                        "Top with salsa. Layer tomato, bell pepper, green onions, and lettuce over top.",
+                        "Sprinkle over Cheddar cheese and garnish with black olives."
+                    ];
+                    
+                    stepText.map(function (el) {
+                        var li = document.createElement("li");
+                        li.appendChild(document.createTextNode(el));
+                        document.getElementsByClassName("step")[0].appendChild(li)
+                        });
+                    });
 
         </script>
 
